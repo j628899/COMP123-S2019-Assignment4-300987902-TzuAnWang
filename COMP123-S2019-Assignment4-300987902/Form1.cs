@@ -12,6 +12,12 @@ namespace COMP123_S2019_Assignment4_300987902
 {
     public partial class Form1 : Form
     {
+        public double meter { get; set; }
+        public double kg { get; set; }
+        public double bmi { get; set; }
+        public double inches { get; set; }
+        public double pounds { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -31,11 +37,7 @@ namespace COMP123_S2019_Assignment4_300987902
 
         private void CalculateBMIbutton_Click(object sender, EventArgs e)
         {
-            double meter;
-            double kg;
-            double bmi;
-            double inches;
-            double pounds;
+            
            
             
             if (tableLayoutPanel_MetricUnits.Visible == true) 
@@ -56,6 +58,68 @@ namespace COMP123_S2019_Assignment4_300987902
                 TextBoxControl.BackColor = Color.LightGreen;
             }
 
+        }
+
+        private void MetreBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                float.Parse(MetreBox.Text);
+                CalculateBMIbutton.Enabled = true;
+            }
+            catch
+            {
+                CalculateBMIbutton.Enabled = false;
+            }
+        }
+
+        private void KilogramsBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                float.Parse(KilogramsBox.Text);
+                CalculateBMIbutton.Enabled = true;
+            }
+            catch
+            {
+                CalculateBMIbutton.Enabled = false;
+            }
+        }
+
+        private void inchesBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                float.Parse(inchesBox.Text);
+                CalculateBMIbutton.Enabled = true;
+            }
+            catch
+            {
+                CalculateBMIbutton.Enabled = false;
+            }
+        }
+
+        private void poundsBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                float.Parse(poundsBox.Text);
+                CalculateBMIbutton.Enabled = true;
+            }
+            catch
+            {
+                CalculateBMIbutton.Enabled = false;
+            }
+        }
+
+        private void ResetButtom_Click(object sender, EventArgs e)
+        {
+            MetreBox.Text = "metre";
+            KilogramsBox.Text = "kilograms";
+            inchesBox.Text = "inch";
+            poundsBox.Text = "pound";
+
+            CalculateBMIbutton.Enabled = false;
         }
     }
 }

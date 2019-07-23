@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.KilogramsBox = new System.Windows.Forms.TextBox();
+            this.ResetButtom = new System.Windows.Forms.Button();
             this.tableLayoutPanel_imperial.SuspendLayout();
             this.tableLayoutPanel_MetricUnits.SuspendLayout();
             this.SuspendLayout();
@@ -55,22 +56,23 @@
             this.tableLayoutPanel_imperial.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel_imperial.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel_imperial.Controls.Add(this.poundsBox, 1, 1);
-            this.tableLayoutPanel_imperial.Location = new System.Drawing.Point(12, 51);
+            this.tableLayoutPanel_imperial.Location = new System.Drawing.Point(9, 12);
             this.tableLayoutPanel_imperial.Name = "tableLayoutPanel_imperial";
             this.tableLayoutPanel_imperial.RowCount = 2;
             this.tableLayoutPanel_imperial.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_imperial.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_imperial.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_imperial.Size = new System.Drawing.Size(278, 122);
+            this.tableLayoutPanel_imperial.Size = new System.Drawing.Size(297, 122);
             this.tableLayoutPanel_imperial.TabIndex = 0;
             // 
             // inchesBox
             // 
-            this.inchesBox.Location = new System.Drawing.Point(186, 3);
+            this.inchesBox.Location = new System.Drawing.Point(199, 3);
             this.inchesBox.Name = "inchesBox";
             this.inchesBox.Size = new System.Drawing.Size(89, 45);
             this.inchesBox.TabIndex = 3;
             this.inchesBox.Text = "Inch";
+            this.inchesBox.TextChanged += new System.EventHandler(this.inchesBox_TextChanged);
             // 
             // label1
             // 
@@ -92,16 +94,17 @@
             // 
             // poundsBox
             // 
-            this.poundsBox.Location = new System.Drawing.Point(186, 64);
+            this.poundsBox.Location = new System.Drawing.Point(199, 64);
             this.poundsBox.Name = "poundsBox";
             this.poundsBox.Size = new System.Drawing.Size(89, 45);
             this.poundsBox.TabIndex = 3;
             this.poundsBox.Text = "Pounds";
+            this.poundsBox.TextChanged += new System.EventHandler(this.poundsBox_TextChanged);
             // 
             // Imperial
             // 
             this.Imperial.AutoSize = true;
-            this.Imperial.Location = new System.Drawing.Point(39, 193);
+            this.Imperial.Location = new System.Drawing.Point(39, 189);
             this.Imperial.Name = "Imperial";
             this.Imperial.Size = new System.Drawing.Size(160, 43);
             this.Imperial.TabIndex = 1;
@@ -112,7 +115,7 @@
             // MetricUnits
             // 
             this.MetricUnits.AutoSize = true;
-            this.MetricUnits.Location = new System.Drawing.Point(39, 242);
+            this.MetricUnits.Location = new System.Drawing.Point(39, 140);
             this.MetricUnits.Name = "MetricUnits";
             this.MetricUnits.Size = new System.Drawing.Size(217, 43);
             this.MetricUnits.TabIndex = 2;
@@ -122,9 +125,9 @@
             // 
             // CalculateBMIbutton
             // 
-            this.CalculateBMIbutton.Location = new System.Drawing.Point(12, 368);
+            this.CalculateBMIbutton.Location = new System.Drawing.Point(9, 368);
             this.CalculateBMIbutton.Name = "CalculateBMIbutton";
-            this.CalculateBMIbutton.Size = new System.Drawing.Size(278, 53);
+            this.CalculateBMIbutton.Size = new System.Drawing.Size(281, 53);
             this.CalculateBMIbutton.TabIndex = 3;
             this.CalculateBMIbutton.Text = "CalculateBMI";
             this.CalculateBMIbutton.UseVisualStyleBackColor = true;
@@ -134,35 +137,36 @@
             // 
             this.TextBoxControl.BackColor = System.Drawing.SystemColors.Control;
             this.TextBoxControl.Enabled = false;
-            this.TextBoxControl.Location = new System.Drawing.Point(49, 300);
+            this.TextBoxControl.Location = new System.Drawing.Point(39, 238);
             this.TextBoxControl.Name = "TextBoxControl";
-            this.TextBoxControl.Size = new System.Drawing.Size(193, 45);
+            this.TextBoxControl.Size = new System.Drawing.Size(204, 45);
             this.TextBoxControl.TabIndex = 4;
             // 
             // tableLayoutPanel_MetricUnits
             // 
             this.tableLayoutPanel_MetricUnits.ColumnCount = 2;
-            this.tableLayoutPanel_MetricUnits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.18705F));
-            this.tableLayoutPanel_MetricUnits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.81295F));
+            this.tableLayoutPanel_MetricUnits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.82734F));
+            this.tableLayoutPanel_MetricUnits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.17266F));
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.MetreBox, 1, 0);
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.KilogramsBox, 1, 1);
-            this.tableLayoutPanel_MetricUnits.Location = new System.Drawing.Point(9, 51);
+            this.tableLayoutPanel_MetricUnits.Location = new System.Drawing.Point(9, 12);
             this.tableLayoutPanel_MetricUnits.Name = "tableLayoutPanel_MetricUnits";
             this.tableLayoutPanel_MetricUnits.RowCount = 2;
             this.tableLayoutPanel_MetricUnits.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_MetricUnits.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_MetricUnits.Size = new System.Drawing.Size(278, 122);
+            this.tableLayoutPanel_MetricUnits.Size = new System.Drawing.Size(297, 122);
             this.tableLayoutPanel_MetricUnits.TabIndex = 5;
             // 
             // MetreBox
             // 
-            this.MetreBox.Location = new System.Drawing.Point(186, 3);
+            this.MetreBox.Location = new System.Drawing.Point(198, 3);
             this.MetreBox.Name = "MetreBox";
             this.MetreBox.Size = new System.Drawing.Size(89, 45);
             this.MetreBox.TabIndex = 3;
             this.MetreBox.Text = "metres";
+            this.MetreBox.TextChanged += new System.EventHandler(this.MetreBox_TextChanged);
             // 
             // label3
             // 
@@ -184,17 +188,29 @@
             // 
             // KilogramsBox
             // 
-            this.KilogramsBox.Location = new System.Drawing.Point(186, 64);
+            this.KilogramsBox.Location = new System.Drawing.Point(198, 64);
             this.KilogramsBox.Name = "KilogramsBox";
             this.KilogramsBox.Size = new System.Drawing.Size(89, 45);
             this.KilogramsBox.TabIndex = 3;
             this.KilogramsBox.Text = "kilograms";
+            this.KilogramsBox.TextChanged += new System.EventHandler(this.KilogramsBox_TextChanged);
+            // 
+            // ResetButtom
+            // 
+            this.ResetButtom.Location = new System.Drawing.Point(9, 310);
+            this.ResetButtom.Name = "ResetButtom";
+            this.ResetButtom.Size = new System.Drawing.Size(281, 52);
+            this.ResetButtom.TabIndex = 6;
+            this.ResetButtom.Text = "Reset";
+            this.ResetButtom.UseVisualStyleBackColor = true;
+            this.ResetButtom.Click += new System.EventHandler(this.ResetButtom_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 433);
+            this.Controls.Add(this.ResetButtom);
             this.Controls.Add(this.tableLayoutPanel_MetricUnits);
             this.Controls.Add(this.TextBoxControl);
             this.Controls.Add(this.CalculateBMIbutton);
@@ -233,6 +249,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox KilogramsBox;
+        private System.Windows.Forms.Button ResetButtom;
     }
 }
 
