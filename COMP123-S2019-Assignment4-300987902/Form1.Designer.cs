@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.KilogramsBox = new System.Windows.Forms.TextBox();
             this.ResetButtom = new System.Windows.Forms.Button();
+            this.MultilineTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_imperial.SuspendLayout();
             this.tableLayoutPanel_MetricUnits.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             this.inchesBox.Size = new System.Drawing.Size(89, 45);
             this.inchesBox.TabIndex = 3;
             this.inchesBox.Text = "Inch";
+            this.inchesBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.inchesBox_MouseClick);
             this.inchesBox.TextChanged += new System.EventHandler(this.inchesBox_TextChanged);
             // 
             // label1
@@ -99,6 +101,7 @@
             this.poundsBox.Size = new System.Drawing.Size(89, 45);
             this.poundsBox.TabIndex = 3;
             this.poundsBox.Text = "Pounds";
+            this.poundsBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.poundsBox_MouseClick);
             this.poundsBox.TextChanged += new System.EventHandler(this.poundsBox_TextChanged);
             // 
             // Imperial
@@ -127,6 +130,7 @@
             // 
             // CalculateBMIbutton
             // 
+            this.CalculateBMIbutton.Enabled = false;
             this.CalculateBMIbutton.Location = new System.Drawing.Point(9, 368);
             this.CalculateBMIbutton.Name = "CalculateBMIbutton";
             this.CalculateBMIbutton.Size = new System.Drawing.Size(281, 53);
@@ -140,9 +144,9 @@
             this.TextBoxControl.BackColor = System.Drawing.SystemColors.Control;
             this.TextBoxControl.Enabled = false;
             this.TextBoxControl.ForeColor = System.Drawing.SystemColors.Control;
-            this.TextBoxControl.Location = new System.Drawing.Point(39, 238);
+            this.TextBoxControl.Location = new System.Drawing.Point(12, 259);
             this.TextBoxControl.Name = "TextBoxControl";
-            this.TextBoxControl.Size = new System.Drawing.Size(204, 45);
+            this.TextBoxControl.Size = new System.Drawing.Size(75, 45);
             this.TextBoxControl.TabIndex = 4;
             // 
             // tableLayoutPanel_MetricUnits
@@ -154,7 +158,7 @@
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel_MetricUnits.Controls.Add(this.KilogramsBox, 1, 1);
-            this.tableLayoutPanel_MetricUnits.Location = new System.Drawing.Point(9, 12);
+            this.tableLayoutPanel_MetricUnits.Location = new System.Drawing.Point(9, 15);
             this.tableLayoutPanel_MetricUnits.Name = "tableLayoutPanel_MetricUnits";
             this.tableLayoutPanel_MetricUnits.RowCount = 2;
             this.tableLayoutPanel_MetricUnits.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -169,6 +173,7 @@
             this.MetreBox.Size = new System.Drawing.Size(89, 45);
             this.MetreBox.TabIndex = 3;
             this.MetreBox.Text = "metres";
+            this.MetreBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MetreBox_MouseClick);
             this.MetreBox.TextChanged += new System.EventHandler(this.MetreBox_TextChanged);
             // 
             // label3
@@ -196,6 +201,7 @@
             this.KilogramsBox.Size = new System.Drawing.Size(89, 45);
             this.KilogramsBox.TabIndex = 3;
             this.KilogramsBox.Text = "kilograms";
+            this.KilogramsBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KilogramsBox_MouseClick);
             this.KilogramsBox.TextChanged += new System.EventHandler(this.KilogramsBox_TextChanged);
             // 
             // ResetButtom
@@ -208,11 +214,22 @@
             this.ResetButtom.UseVisualStyleBackColor = true;
             this.ResetButtom.Click += new System.EventHandler(this.ResetButtom_Click);
             // 
+            // MultilineTextBox
+            // 
+            this.MultilineTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.MultilineTextBox.Enabled = false;
+            this.MultilineTextBox.ForeColor = System.Drawing.SystemColors.Control;
+            this.MultilineTextBox.Location = new System.Drawing.Point(96, 259);
+            this.MultilineTextBox.Name = "MultilineTextBox";
+            this.MultilineTextBox.Size = new System.Drawing.Size(194, 45);
+            this.MultilineTextBox.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 433);
+            this.Controls.Add(this.MultilineTextBox);
             this.Controls.Add(this.ResetButtom);
             this.Controls.Add(this.tableLayoutPanel_MetricUnits);
             this.Controls.Add(this.TextBoxControl);
@@ -255,6 +272,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox KilogramsBox;
         private System.Windows.Forms.Button ResetButtom;
+        private System.Windows.Forms.TextBox MultilineTextBox;
     }
 }
 

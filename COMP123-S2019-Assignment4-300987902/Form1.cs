@@ -47,7 +47,12 @@ namespace COMP123_S2019_Assignment4_300987902
                 bmi = (kg / (meter * meter));
                 TextBoxControl.Text = bmi.ToString();
                 TextBoxControl.BackColor = Color.LightBlue;
-                
+                MultilineTextBox.BackColor = Color.LightBlue;
+                MetreBox.BackColor = Color.White;
+                KilogramsBox.BackColor = Color.White;
+                inchesBox.BackColor = Color.White;
+                poundsBox.BackColor = Color.White;
+
 
             }
             else
@@ -57,15 +62,34 @@ namespace COMP123_S2019_Assignment4_300987902
                 bmi = ((pounds*703) / (inches * inches));
                 TextBoxControl.Text = bmi.ToString();
                 TextBoxControl.BackColor = Color.LightGreen;
+                MultilineTextBox.BackColor = Color.LightGreen;
+                MetreBox.BackColor = Color.White;
+                KilogramsBox.BackColor = Color.White;
+                inchesBox.BackColor = Color.White;
+                poundsBox.BackColor = Color.White;
             }
-
+            if (bmi < 18.5)
+            { MultilineTextBox.Text = "Under Weight"; }
+            else if (bmi > 18.5 && bmi < 24.9)
+            {
+                MultilineTextBox.Text = "Normal";
+            }
+            else if (bmi >25 && bmi < 29.9)
+            {
+                MultilineTextBox.Text = "Over Weight";
+            }
+            else if (bmi > 30)
+            {
+                MultilineTextBox.Text = "Obese";
+            }
         }
 
         private void MetreBox_TextChanged(object sender, EventArgs e)
         {
+            
             if (MetreBox != null)
             {
-                MetreBox.BackColor = Color.LightSalmon;
+                MetreBox.BackColor = Color.LemonChiffon;
                 
             }
             
@@ -73,6 +97,7 @@ namespace COMP123_S2019_Assignment4_300987902
             try
             {
                 float.Parse(MetreBox.Text);
+                float.Parse(KilogramsBox.Text);
                 CalculateBMIbutton.Enabled = true;
             }
             catch
@@ -85,12 +110,13 @@ namespace COMP123_S2019_Assignment4_300987902
         {
             if (KilogramsBox != null)
             {
-                KilogramsBox.BackColor = Color.LightSalmon;
+                KilogramsBox.BackColor = Color.LemonChiffon;
 
             }
             try
             {
                 float.Parse(KilogramsBox.Text);
+                float.Parse(MetreBox.Text);
                 CalculateBMIbutton.Enabled = true;
             }
             catch
@@ -103,12 +129,14 @@ namespace COMP123_S2019_Assignment4_300987902
         {
             if (inchesBox != null)
             {
-                inchesBox.BackColor = Color.LightSalmon;
+                inchesBox.BackColor = Color.LemonChiffon;
 
             }
+
             try
             {
                 float.Parse(inchesBox.Text);
+                float.Parse(poundsBox.Text);
                 CalculateBMIbutton.Enabled = true;
             }
             catch
@@ -121,12 +149,13 @@ namespace COMP123_S2019_Assignment4_300987902
         {
             if (poundsBox != null)
             {
-                poundsBox.BackColor = Color.LightSalmon;
+                poundsBox.BackColor = Color.LemonChiffon;
 
             }
             try
             {
                 float.Parse(poundsBox.Text);
+                float.Parse(inchesBox.Text);
                 CalculateBMIbutton.Enabled = true;
             }
             catch
@@ -147,8 +176,9 @@ namespace COMP123_S2019_Assignment4_300987902
             inchesBox.BackColor = Color.White;
             poundsBox.BackColor = Color.White;
             TextBoxControl.BackColor = Color.WhiteSmoke;
+            MultilineTextBox.BackColor = Color.WhiteSmoke;
             TextBoxControl.Text = null;
-
+            MultilineTextBox.Text = null;
             CalculateBMIbutton.Enabled = false;
         }
 
@@ -160,6 +190,47 @@ namespace COMP123_S2019_Assignment4_300987902
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.Size = new Size(320, 480);
+        }
+
+        private void MetreBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            MetreBox.BackColor = Color.LemonChiffon;
+           
+            KilogramsBox.BackColor = Color.White;
+            inchesBox.BackColor = Color.White;
+            poundsBox.BackColor = Color.White;
+            MetreBox.Text = null;
+        }
+
+        private void KilogramsBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            KilogramsBox.BackColor = Color.LemonChiffon;
+
+            MetreBox.BackColor = Color.White;
+            inchesBox.BackColor = Color.White;
+            poundsBox.BackColor = Color.White;
+            KilogramsBox.Text = null;
+        }
+
+        private void inchesBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            inchesBox.BackColor = Color.LemonChiffon;
+
+            MetreBox.BackColor = Color.White;
+            KilogramsBox.BackColor = Color.White;
+            poundsBox.BackColor = Color.White;
+            inchesBox.Text = null;
+        }
+
+        private void poundsBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            poundsBox.BackColor = Color.LemonChiffon;
+
+            MetreBox.BackColor = Color.White;
+            KilogramsBox.BackColor = Color.White;
+            inchesBox.BackColor = Color.White;
+            poundsBox.Text = null;
+
         }
     }
 }
