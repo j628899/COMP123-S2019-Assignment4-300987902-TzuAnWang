@@ -1,6 +1,6 @@
 ﻿namespace COMP123_S2019_Assignment4_300987902
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -115,10 +115,12 @@
             // MetricUnits
             // 
             this.MetricUnits.AutoSize = true;
+            this.MetricUnits.Checked = true;
             this.MetricUnits.Location = new System.Drawing.Point(39, 140);
             this.MetricUnits.Name = "MetricUnits";
             this.MetricUnits.Size = new System.Drawing.Size(217, 43);
             this.MetricUnits.TabIndex = 2;
+            this.MetricUnits.TabStop = true;
             this.MetricUnits.Text = "Metric Units";
             this.MetricUnits.UseVisualStyleBackColor = true;
             this.MetricUnits.CheckedChanged += new System.EventHandler(this.MetricUnits_CheckedChanged);
@@ -137,6 +139,7 @@
             // 
             this.TextBoxControl.BackColor = System.Drawing.SystemColors.Control;
             this.TextBoxControl.Enabled = false;
+            this.TextBoxControl.ForeColor = System.Drawing.SystemColors.Control;
             this.TextBoxControl.Location = new System.Drawing.Point(39, 238);
             this.TextBoxControl.Name = "TextBoxControl";
             this.TextBoxControl.Size = new System.Drawing.Size(204, 45);
@@ -205,7 +208,7 @@
             this.ResetButtom.UseVisualStyleBackColor = true;
             this.ResetButtom.Click += new System.EventHandler(this.ResetButtom_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,9 +224,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(7);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel_imperial.ResumeLayout(false);
             this.tableLayoutPanel_imperial.PerformLayout();
             this.tableLayoutPanel_MetricUnits.ResumeLayout(false);

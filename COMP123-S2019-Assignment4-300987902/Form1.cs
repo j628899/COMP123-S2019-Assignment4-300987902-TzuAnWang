@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace COMP123_S2019_Assignment4_300987902
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public double meter { get; set; }
         public double kg { get; set; }
@@ -18,7 +18,7 @@ namespace COMP123_S2019_Assignment4_300987902
         public double inches { get; set; }
         public double pounds { get; set; }
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -47,6 +47,7 @@ namespace COMP123_S2019_Assignment4_300987902
                 bmi = (kg / (meter * meter));
                 TextBoxControl.Text = bmi.ToString();
                 TextBoxControl.BackColor = Color.LightBlue;
+                
 
             }
             else
@@ -62,6 +63,13 @@ namespace COMP123_S2019_Assignment4_300987902
 
         private void MetreBox_TextChanged(object sender, EventArgs e)
         {
+            if (MetreBox != null)
+            {
+                MetreBox.BackColor = Color.LightSalmon;
+                
+            }
+            
+            
             try
             {
                 float.Parse(MetreBox.Text);
@@ -75,6 +83,11 @@ namespace COMP123_S2019_Assignment4_300987902
 
         private void KilogramsBox_TextChanged(object sender, EventArgs e)
         {
+            if (KilogramsBox != null)
+            {
+                KilogramsBox.BackColor = Color.LightSalmon;
+
+            }
             try
             {
                 float.Parse(KilogramsBox.Text);
@@ -88,6 +101,11 @@ namespace COMP123_S2019_Assignment4_300987902
 
         private void inchesBox_TextChanged(object sender, EventArgs e)
         {
+            if (inchesBox != null)
+            {
+                inchesBox.BackColor = Color.LightSalmon;
+
+            }
             try
             {
                 float.Parse(inchesBox.Text);
@@ -101,6 +119,11 @@ namespace COMP123_S2019_Assignment4_300987902
 
         private void poundsBox_TextChanged(object sender, EventArgs e)
         {
+            if (poundsBox != null)
+            {
+                poundsBox.BackColor = Color.LightSalmon;
+
+            }
             try
             {
                 float.Parse(poundsBox.Text);
@@ -119,7 +142,24 @@ namespace COMP123_S2019_Assignment4_300987902
             inchesBox.Text = "inch";
             poundsBox.Text = "pound";
 
+            MetreBox.BackColor = Color.White;
+            KilogramsBox.BackColor = Color.White;
+            inchesBox.BackColor = Color.White;
+            poundsBox.BackColor = Color.White;
+            TextBoxControl.BackColor = Color.WhiteSmoke;
+            TextBoxControl.Text = null;
+
             CalculateBMIbutton.Enabled = false;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.Size = new Size(320, 480);
         }
     }
 }
